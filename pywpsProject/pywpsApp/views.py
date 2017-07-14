@@ -49,8 +49,25 @@ processes = [
 ]
 
 
+# For the process list on the home page
+
+process_descriptor = {}
+for process in processes:
+    abstract = process.abstract
+    identifier = process.identifier
+    process_descriptor[identifier] = abstract
+
 # This is how you start PyWPS instance as WSGI that is return to the Django project's urls.py
 # if the pywps.cfg is inside the app then we need to use ./pywpsApp/pywps.cfg 
 application = Service(processes, ['./pywps.cfg'])
+
+#DJANGO
+from django.views.generic import TemplateView # Import TemplateView
+
+class HomeView(TemplateView):
+    template_name = "home.html"
+    # we could have used process_desciptor as a sort of model
+    def get_context_data(self, **kwargs):
+        return {"process_descriptor":process_descriptor}
 
 

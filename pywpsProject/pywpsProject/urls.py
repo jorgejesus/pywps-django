@@ -15,16 +15,15 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from pywpsApp.views import application
+from pywpsApp.views import application,HomeView
+from pywpsApp.views import process_descriptor
 from viewsgi import embed_wsgi
 
 
 
 ##APPEND_SLASH = False
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
- #   url(r'^wps$', embed_wsgi(application),name="pywps"),
-    url(r'^wps$', embed_wsgi(application),name="pywps"),
-   
- 
+ #   url(r'^admin/', admin.site.urls),
+     url(r'^wps$', embed_wsgi(application),name="pywps"),
+     url(r'^$',  HomeView.as_view(), name='home'),
 ]
