@@ -10,20 +10,20 @@
 	<code>{{ server_url }}</code>
 </p>
 <p>
-	<a href='{{ server_url }}?request=GetCapabilities&service=WPS'
-		target="_blank" title='{{ server_url }}?request=GetCapabilities&service=WPS'> <img
+	<a href='{{ server_url }}/wps?request=GetCapabilities&service=WPS'
+		target="_blank" title='{{ server_url }}/wps?request=GetCapabilities&service=WPS'> <img
 		src="/static/pics/PyWPS-GetCapabilities-brightgreen.svg" />
 	</a> <a
 		href='{{ server_url }}?request=DescribeProcess&service=WPS&identifier=all&version=1.0.0'
-		target="_blank" title='{{ server_url }}?request=DescribeProcess&service=WPS&identifier=all&version=1.0.0'> <img
+		target="_blank" title='{{ server_url }}?wps?request=DescribeProcess&service=WPS&identifier=all&version=1.0.0'> <img
 		src="/static/pics/PyWPS-DescribeProcess-green.svg" />
 	</a>
 </p>
 It exposes the following processes:
 <ul>
-	{% for name, abstract in process_descriptor.iteritems %}
+	{% for name, abstract in process_descriptor.items %}
 	<li><b>{{ name }}</b> - {{ abstract }}</li> &nbsp;&nbsp;  
-	<a href='{{ server_url }}?request=DescribeProcess&service=WPS&identifier=all&version=1.0.0' target="_blank" title='{{ server_url }}?request=DescribeProcess&service=WPS&identifier={{ name }}&version=1.0.0'> <img src="/static/pics/PyWPS-DescribeProcess-green.svg" /></a>
+	<a href='{{ server_url }}/wps?request=DescribeProcess&service=WPS&identifier=all&version=1.0.0' target="_blank" title='{{ server_url }}?request=DescribeProcess&service=WPS&identifier={{ name }}&version=1.0.0'> <img src="/static/pics/PyWPS-DescribeProcess-green.svg" /></a>
 	{% endfor %}
 </ul>
 
@@ -34,9 +34,9 @@ It exposes the following processes:
 		target="_blank">pywps.rtfd.org</a>; source code and issue tracking at
 	<a href="https://github.com/geopython/pywps" target="_blank">
 		github.com/geopython/pywps</a>. Code for this app is at <a
-		href="https://github.com/geopython/pywps-flask/blob/master/demo.py"
+		href="https://github.com/geopython/pywps-django/blob/master/demo.py"
 		target="_blank">
-		github.com/geopython/pywps-flask/blob/master/demo.py</a>.
+		github.com/geopython/pywps-django/blob/master/demo.py</a>.
 </p>
 
       <p>
