@@ -8,9 +8,11 @@ Python dependencies are listed in the ``requirements.txt``  file. You can instal
 $ pip3 install -r requirements.txt
 ```
 
+This will add a src/ folder that will contain pywps and other code necessary to run the demo
+
 ## Running
 
-Two options, calling the ``demo.py`` script on folder ``pywpsProject`` 
+Two options, calling the ``demo.py`` script on folder ``pywpsProject``
 ```bash
 $ python3 demo.py
 ```
