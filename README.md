@@ -10,7 +10,7 @@ $ pip3 install -r requirements.txt
 
 ## Running
 
-Two options, calling the ``demo.py`` script 
+Two options, calling the ``demo.py`` script on folder ``pywpsProject`` 
 ```bash
 $ python3 demo.py
 ```
